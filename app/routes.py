@@ -2,7 +2,15 @@ from flask import Flask                    # from the flask module import the Fl
 
 app  = Flask(__name__)
 
-@app.get("/aboutme")                              # flask decorator that "wraps" our view function
+
+@app.get("/")                             # flask decorator that "wraps" our view function
+def home():                               # view function
+    return "<h1>home page</h1>"
+
+
+
+
+@app.get("/aboutme")                       # flask decorator that "wraps" our view function
 def index():                               # view function
     me = {                                 # python3 dictionary (key-value pairs)
         "first_name": "Patrick",
